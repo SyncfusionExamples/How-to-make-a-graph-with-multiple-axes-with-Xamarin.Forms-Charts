@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Chart_GettingStarted"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             x:Class="Chart_GettingStarted.MainPage" >
+    
+    <StackLayout >
+        <chart:SfChart x:Name="Chart" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <chart:SfChart.Title>
+                <chart:ChartTitle Text="Royal enfield" FontSize="18" FontAttributes="Bold" TextColor="Black"/>
+            </chart:SfChart.Title>
+
+            <chart:SfChart.BindingContext>
+                <local:ViewModel/>
+            </chart:SfChart.BindingContext>
+
+            <chart:SfChart.PrimaryAxis>
+                <chart:DateTimeAxis Interval="1"  IntervalType="Months" Minimum="2019-12-15" Maximum="2020-05-15" ShowMajorGridLines="False" RangePadding="Additional" >
+                    <chart:DateTimeAxis.LabelStyle>
+                        <chart:ChartAxisLabelStyle  LabelFormat="MMM" TextColor="#6d7372" FontSize="12"/>
+                    </chart:DateTimeAxis.LabelStyle>
+                    <chart:DateTimeAxis.Title>
+                        <chart:ChartAxisTitle Text="Sales" TextColor="#6d7372" FontSize="15"/>
+                    </chart:DateTimeAxis.Title>
+                </chart:DateTimeAxis>
+            </chart:SfChart.PrimaryAxis>
+
+            <chart:SfChart.SecondaryAxis>
+                <chart:NumericalAxis Interval="5"  EdgeLabelsVisibilityMode="Visible" Minimum="375" Maximum="395"  EdgeLabelsDrawingMode="Fit">
+                    <chart:NumericalAxis.LabelStyle>
+                        <chart:ChartAxisLabelStyle TextColor="#6192f2" FontSize="12"/>
+                    </chart:NumericalAxis.LabelStyle>
+                    <chart:NumericalAxis.Title>
+                        <chart:ChartAxisTitle Text="ProductA" TextColor="#6192f2" FontSize="15"/>
+                    </chart:NumericalAxis.Title>
+                </chart:NumericalAxis>
+            </chart:SfChart.SecondaryAxis>
+
+            <chart:SfChart.Series>
+
+                <chart:SplineSeries ItemsSource="{Binding Data}" XBindingPath="XValue" YBindingPath="YValue1" Color="#6192f2" StrokeWidth="3"  LegendIcon="Circle" Label="Thunderbird">
+                    <chart:SplineSeries.DataMarker>
+                        <chart:ChartDataMarker MarkerWidth="20" MarkerHeight="20"  ShowLabel="false" ShowMarker="true" MarkerBorderColor="White" MarkerBorderWidth="3" MarkerColor="#6192f2">
+                        </chart:ChartDataMarker>
+                    </chart:SplineSeries.DataMarker>
+                </chart:SplineSeries>
+
+                <chart:SplineSeries ItemsSource="{Binding Data}" XBindingPath="XValue" YBindingPath="YValue2" Color="#d938d6" StrokeWidth="3" Label="Bullet">
+                    <chart:SplineSeries.YAxis>
+                        <chart:NumericalAxis OpposedPosition="true" Minimum="15" Maximum="23" Interval="2" EdgeLabelsDrawingMode="Fit">
+                            <chart:NumericalAxis.LabelStyle>
+                                <chart:ChartAxisLabelStyle TextColor="#d938d6" FontSize="12"/>
+                            </chart:NumericalAxis.LabelStyle>
+                            <chart:NumericalAxis.Title>
+                                <chart:ChartAxisTitle Text="ProductB" FontSize="15" TextColor="#d938d6"/>
+                            </chart:NumericalAxis.Title>
+                        </chart:NumericalAxis>
+                    </chart:SplineSeries.YAxis>
+                    <chart:SplineSeries.DataMarker>
+                        <chart:ChartDataMarker MarkerWidth="20" MarkerHeight="20"  ShowLabel="false" ShowMarker="true" MarkerBorderColor="White" MarkerBorderWidth="3" MarkerColor="#d938d6">
+                        </chart:ChartDataMarker>
+                    </chart:SplineSeries.DataMarker>
+                </chart:SplineSeries>
+
+            </chart:SfChart.Series>
+        </chart:SfChart>
+    </StackLayout>
+</ContentPage>
