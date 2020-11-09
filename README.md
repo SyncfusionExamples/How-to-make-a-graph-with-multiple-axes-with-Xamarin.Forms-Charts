@@ -4,7 +4,7 @@ This article explains how to add the multiple Y axes in Xamarin.Forms Charts.
 
 Consider the use case to plot the graph for two products with different unit sales rate on the specific month as shown in below. It has been achieved by using the XAxis and YAxis of the series.
 
- ![](Output.png)
+ ![](Output.jpg)
 
 By default, Cartesian series made using SfChart's PrimaryAxis and SecondaryAxis. 
 
