@@ -8,7 +8,7 @@ Consider the use case to plot the graph for two products with different unit sal
 
 By default, Cartesian series made using SfChart's PrimaryAxis and SecondaryAxis. 
 
-# How to add the multi y-axis in Xamarin.Forms Chart in using XAML
+## How to add the multi y-axis in Xamarin.Forms Chart in using XAML
 
 Step 1: Declare the default PrimaryAxis and SecondaryAxis of SfChart with its customization.
 ```
@@ -35,7 +35,7 @@ Step 2: Declaration to add y-axis for the required Series.
 </chart:SfChart.Series>
 …
 ```
-# How to add the multi y-axis in Xamarin.Forms Chart in using C#
+## How to add the multi y-axis in Xamarin.Forms Chart in using C#
 
 The following C# code example shows how to Add y-axis (or intend of x-axis) property added in chart series.
 ```
